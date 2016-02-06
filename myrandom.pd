@@ -1,0 +1,12 @@
+#N canvas 583 333 209 154 10;
+#X obj 20 12 inlet bang;
+#X obj 20 39 random 1000;
+#X obj 20 63 - 500;
+#X obj 20 85 / 1000;
+#X obj 20 107 outlet value;
+#X floatatom 102 107 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
