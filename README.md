@@ -4,14 +4,14 @@ J.a.g.s
 README
 ------
 
-J.a.g.s. (just another granular synth) is a PureData patch useful if you need to create new and interesting sounds using granular synthesis techniques.
+J.a.g.s. (just another granular synth) is a **PureData** patch useful if you need to create new and interesting sounds using granular synthesis techniques.
 It grants great flexibility allowing the control of every fundamental synthesis parameter.
 
 J.a.g.s. can also be controlled via MIDI.
 
 USAGE
 -----
-
+In to use this patch you need **PureData** up and running: you can download it from the [PureData](http://puredata.info/) official web site.
 See Manual for more details.
 
 LICENSE
