@@ -1,5 +1,5 @@
-J.a.g.s
-=======
+J.a.g.s.
+========
 
 README
 ------
@@ -11,8 +11,9 @@ J.a.g.s. can also be controlled via MIDI.
 
 USAGE
 -----
-In to use this patch you need **PureData** up and running: you can download it from the [PureData](http://puredata.info/) official web site.
-See Manual for more details.
+In order to use this patch you need **PureData** up and running: you can download it from the [PureData](http://puredata.info/) official web site.
+
+See the J.a.g.s. **User Manual** for more details.
 
 LICENSE
 -------
