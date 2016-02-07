@@ -1,21 +1,21 @@
-#N canvas 531 55 575 486 10;
+#N canvas 80 179 575 486 10;
 #N canvas 102 307 536 237 controllo-globali 0;
 #X obj 10 10 cnv 15 490 80 empty empty Grain_Local 5 12 0 14 -261682
 -66577 0;
 #X floatatom 32 65 5 0 0 1 (ms) - -, f 5;
 #X obj 35 44 hsl 100 15 0 1000 0 0 empty my-start startoffset 0 7 0
-10 -203904 -1 -1 9000 1;
+10 -203904 -1 -1 9900 1;
 #X obj 150 44 hsl 100 15 0 0.5 0 0 empty my-dur duroffsetamount 0 7
-0 10 -204800 -1 -1 4700 1;
+0 10 -204800 -1 -1 9900 1;
 #X floatatom 147 118 5 0 0 1 (%) - -, f 5;
 #X obj 264 44 hsl 100 15 0 200 0 0 empty my-pitch pitchoffset 0 7 0
-10 -232576 -1 -1 3700 1;
+10 -232576 -1 -1 9900 1;
 #X floatatom 261 63 5 0 0 1 (cents) - -, f 5;
 #X obj 261 97 / 100;
 #X floatatom 261 118 5 0 0 1 (semitoni) - -, f 5;
 #X floatatom 377 118 5 0 0 1 (%) - -, f 5;
 #X obj 380 44 hsl 100 15 0 0.5 0 0 empty my-pan panoffsetamount 0 7
-0 10 -261234 -1 -1 7800 1;
+0 10 -261234 -1 -1 9900 1;
 #X obj 32 190 s mystart;
 #X obj 147 190 s myduration;
 #X obj 261 190 s mypitch;
@@ -68,13 +68,11 @@
 #X obj 62 246 line~;
 #X obj 152 233 *~;
 #X obj 152 205 *~;
-#X obj 132 156 catch~ busL;
 #X obj 232 333 hip~ 5;
 #X obj 232 357 clip~ -1 1;
 #X obj 232 263 *~;
 #X obj 232 233 *~;
 #X obj 232 205 *~;
-#X obj 212 156 catch~ busR;
 #X obj 132 447 outlet~ toRecL;
 #X obj 212 427 outlet~ toRecR;
 #X obj 99 135 swap 1;
@@ -85,57 +83,59 @@
 #X obj 232 294 *~ 5;
 #X obj 10 10 cnv 15 75 170 empty empty Master 8 12 0 14 -228856 -66577
 0;
-#X obj 55 154 tgl 20 0 empty empty MUTE 0 -7 0 10 -258113 -1 -1 1 1
+#X obj 55 154 tgl 20 0 empty empty MUTE 0 -7 0 10 -258113 -1 -1 0 1
 ;
 #X obj 18 38 tgl 20 0 empty empty DSP_ON 25 7 0 10 -4034 -1 -1 1 1
 ;
 #X obj 18 71 vsl 15 100 0 1 0 0 empty empty Vol 25 7 0 10 -257985 -1
--1 4300 1;
+-1 8400 1;
+#X obj 132 156 catch~ L;
+#X obj 212 156 catch~ R;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 4 0 5 0;
 #X connect 5 0 9 0;
-#X connect 5 0 15 0;
-#X connect 6 0 24 0;
+#X connect 5 0 14 0;
+#X connect 6 0 22 0;
 #X connect 7 0 8 0;
 #X connect 8 0 6 0;
-#X connect 8 0 14 0;
+#X connect 8 0 13 0;
 #X connect 9 0 6 1;
-#X connect 11 0 18 0;
-#X connect 11 0 9 1;
-#X connect 12 0 13 0;
-#X connect 13 0 3 1;
-#X connect 14 0 25 0;
-#X connect 15 0 14 1;
-#X connect 17 0 19 0;
-#X connect 17 0 15 1;
+#X connect 11 0 12 0;
+#X connect 12 0 3 1;
+#X connect 13 0 23 0;
+#X connect 14 0 13 1;
+#X connect 18 0 19 0;
+#X connect 18 1 19 1;
+#X connect 19 0 7 0;
 #X connect 20 0 21 0;
-#X connect 20 1 21 1;
-#X connect 21 0 7 0;
-#X connect 22 0 23 0;
-#X connect 23 0 27 0;
-#X connect 24 0 1 0;
-#X connect 25 0 12 0;
-#X connect 27 0 20 0;
-#X connect 28 0 0 0;
-#X connect 29 0 4 0;
+#X connect 21 0 25 0;
+#X connect 22 0 1 0;
+#X connect 23 0 11 0;
+#X connect 25 0 18 0;
+#X connect 26 0 0 0;
+#X connect 27 0 4 0;
+#X connect 28 0 16 0;
+#X connect 28 0 9 1;
+#X connect 29 0 17 0;
+#X connect 29 0 14 1;
 #X coords 0 -1 1 1 75 170 2 10 10;
 #X restore 388 137 pd master;
 #N canvas 140 34 1013 724 controllo-globali 0;
 #X obj 10 10 cnv 15 490 260 empty empty Grain_Globals 5 12 0 14 -261682
 -66577 0;
 #X obj 258 210 hsl 100 15 -6 6 0 0 empty g-pitch grainpitch 0 7 0 10
--232576 -1 -1 4350 1;
+-232576 -1 -1 4950 1;
 #X floatatom 255 230 5 0 0 1 (half-tones) - -, f 5;
 #X obj 145 210 hsl 100 15 1 500 0 0 empty g-dur grainduration 0 7 0
-10 -204800 -1 -1 7364 1;
+10 -204800 -1 -1 0 1;
 #X floatatom 142 230 5 0 0 1 (ms) - -, f 5;
 #X obj 255 360 s grainpitch;
 #X obj 142 360 s grainduration;
 #X msg 255 329 0;
 #X obj 545 148 r filesize;
 #X obj 24 156 hsl 465 15 0 1 0 0 empty g-start grainstart 0 7 0 10
--203904 -1 -1 13300 1;
+-203904 -1 -1 12800 1;
 #X floatatom 21 178 5 0 0 0 - - -, f 5;
 #X floatatom 371 231 5 0 0 1 - - -, f 5;
 #X obj 374 210 hsl 100 15 0 1 0 0 empty g-pan pan 0 7 0 10 -261234
@@ -151,12 +151,12 @@
 #X obj 255 185 bng 15 250 50 0 empty empty Original_pitch 17 7 0 10
 -262144 -1 -1;
 #N canvas 0 22 450 300 (subpatch) 0;
-#X array src1 867438 float 2;
-#X coords 0 1 867438 -1 470 100 1 0 0;
+#X array src1 270113 float 2;
+#X coords 0 1 270113 -1 470 100 1 0 0;
 #X restore 21 50 graph;
 #X floatatom 26 231 5 0 0 1 - - -, f 5;
 #X obj 29 210 hsl 100 15 0 1 0 0 empty g-vol vol 0 7 0 10 -204786 -1
--1 8200 1;
+-1 7700 1;
 #X obj 26 304 loadbang;
 #X msg 26 329 1;
 #X obj 26 360 s grainvolume;
@@ -225,7 +225,6 @@
 #X connect 15 0 14 0;
 #X connect 16 0 10 0;
 #X restore 160 89 pd recording-util;
-#X obj 259 60 catch~ busMono;
 #X obj 95 115 s start;
 #X obj 16 215 s reset;
 #X obj 16 188 s stop;
@@ -243,16 +242,17 @@
 -1;
 #X obj 16 142 bng 20 250 50 0 empty empty RESET 25 7 0 10 -257985 -1
 -1;
-#X connect 1 0 0 2;
-#X connect 5 0 2 0;
-#X connect 5 1 13 0;
-#X connect 6 0 0 0;
-#X connect 7 0 0 1;
+#X obj 259 60 catch~ M;
+#X connect 4 0 1 0;
+#X connect 4 1 12 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 1;
+#X connect 7 0 8 0;
 #X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X connect 12 0 5 0;
-#X connect 13 0 4 0;
-#X connect 14 0 3 0;
+#X connect 11 0 4 0;
+#X connect 12 0 3 0;
+#X connect 13 0 2 0;
+#X connect 14 0 0 2;
 #X coords 0 -1 1 1 75 170 2 10 10;
 #X restore 388 312 pd recording;
 #N canvas 79 429 674 311 grain-distance 0;
@@ -311,7 +311,7 @@ it under certain conditions \;;
 #X obj 17 60 tgl 20 0 empty c-metro grains-always 25 7 0 10 -262144
 -1 -1 1 1;
 #X obj 20 95 hsl 180 15 3 500 0 0 graindistance g-dist grain_distance
--2 7 0 10 -257985 -1 -1 5797 1;
+-2 7 0 10 -257985 -1 -1 0 1;
 #X floatatom 17 115 5 0 0 1 (ms) - -, f 5;
 #N canvas 697 351 518 365 polifonia-meter 0;
 #X obj 220 10 r graindistance;
@@ -986,7 +986,7 @@ it under certain conditions \;;
 #X obj 10 10 cnv 15 163 130 empty empty empty 20 12 0 14 -261682 -66577
 0;
 #X text 119 16 J.a.g.s;
-#X text 137 35 v1.0;
+#X text 137 35 v1.1;
 #X coords 0 -1 1 1 163 130 2 10 10;
 #X restore 301 3 pd title;
 #X connect 1 0 3 0;
